@@ -1,0 +1,18 @@
+class Solution:
+    def middleNode(self, head: ListNode) -> ListNode:
+        
+        slow = fast = head
+        
+        while fast and fast.next:
+            
+            slow = slow.next
+            fast = fast.next.next
+        
+        return slow
+        
+        
+   //To solve this problem, we will use two pointer technique. Those are Slow and Fast. In each iteration,
+   The Slow pointer will move one step forward. The other one will move two-step forward. Both will start from the head node.
+
+When the fast pointer reaches the end of the list, the Slow pointer will stop in the middle of the list. After the loop, we will just return the Slow pointer.
+If there are two middle nodes, the slow pointer will point the second one after the loop.//
